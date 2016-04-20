@@ -18,6 +18,7 @@ var util = require('gulp-util');
 var r_babel = require('rollup-plugin-babel');
 var r_commonJS = require('rollup-plugin-commonjs');
 var r_nodeResolve = require('rollup-plugin-node-resolve');
+var r_replace= require('rollup-plugin-replace');
 
 //  Rollup configuration - Based on Qualy Boilerplate's [https://github.com/Qualy-org/qualy-front]
 var ROLLUP_CONFIG = {
@@ -30,6 +31,9 @@ var ROLLUP_CONFIG = {
     }),
     r_commonJS({
       include: 'node_modules/**'
+    }),
+    r_replace({
+      'process.env.NODE_ENV': JSON.stringify(util.env.production ? 'production' : 'development') // We check the environment to update React's source
     })
   ]
 };
@@ -53,10 +57,10 @@ gulp.task('js', function () {
   gulp
     .src(PATHS.source.js)
     .pipe(plumber())
-    .pipe(concat('app.js'))
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(rollup(ROLLUP_CONFIG))
+    .pipe(concat('app.js'))
     .pipe(util.env.production ? uglify() : util.noop()) //  If production flag set, we uglify. If not, go ahead
     .pipe(gulp.dest(PATHS.build.js));
 });
