@@ -24,7 +24,8 @@ var r_replace= require('rollup-plugin-replace');
 var ROLLUP_CONFIG = {
   plugins: [
     r_babel({
-      presets: ['es2015-rollup', 'react']
+      presets: ['react','es2015-rollup'],
+      exclude: 'node_modules/**'
     }),
     r_nodeResolve({
       jsnext: true
@@ -41,7 +42,8 @@ var ROLLUP_CONFIG = {
 //  Object to store the paths to later use
 var PATHS = {
   source: {
-    js: 'src/js/app.js',
+    js: ['src/js/**/*.js','src/js/**/*.jsx'],
+    jsEntry: 'src/js/app.jsx',
     stylesheets: 'src/scss/**/*.scss',
     views: 'src/views/**/*.html'
   },
@@ -55,7 +57,7 @@ var PATHS = {
 //  JS Build task
 gulp.task('js', function () {
   gulp
-    .src(PATHS.source.js)
+    .src(PATHS.source.jsEntry)
     .pipe(plumber())
     .pipe(eslint())
     .pipe(eslint.format())
