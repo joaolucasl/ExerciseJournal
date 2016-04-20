@@ -19,7 +19,7 @@
     "eslint-config-airbnb": "^7.0.0",
     "eslint-plugin-import": "^1.5.0",
     "eslint-plugin-jsx-a11y": "^0.6.2",
-    "eslint-plugin-react": "^5.0.1",
+    "eslint-plugin-react": "^4.3.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
