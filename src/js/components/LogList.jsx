@@ -1,18 +1,22 @@
 import React from 'react';
+import LogItem from './LogItem.jsx';
 
 const LogList = ({logs}) => {
   return (
     <div>
       <h3> Logs </h3>
       <ul className="list-group">
-        {logs.map(log => {
-          return (
-            <li className="list-group-item">
-              <h4>{log.type}</h4>
-              <p>{log.time}</p>
-            </li>
-          )
-        })}
+        {
+          logs.map( (log,i) => {
+            return (
+              <LogItem
+                type={log.type}
+                time={log.time}
+                key={i}
+                />
+            )
+          })
+        }
       </ul>
     </div>
   )

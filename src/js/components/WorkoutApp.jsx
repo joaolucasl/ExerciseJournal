@@ -1,7 +1,11 @@
 import React from 'react';
 import LogList from './LogList.jsx';
 
-export default class WorkoutApp extends React.Component{
+class WorkoutApp extends React.Component{
+  /**
+   * The constructor of the Application. Runs the parent's
+   * constructor (super) and sets the inital state.
+   */
   constructor(){
     super();
     this.state = {
@@ -28,5 +32,16 @@ export default class WorkoutApp extends React.Component{
       <LogList logs={this.state.logs} />
     );
   }
-}
-
+  /**
+   * Adds a new log to the current list,
+   * and updates the Application's state.
+   * @param {Object} log The new log to be added
+   */
+  addLog(log){
+    let newLogArray = this.state.push(log);
+    this.setState({
+      logs: newLogArray
+    });
+  }
+};
+export default WorkoutApp;
