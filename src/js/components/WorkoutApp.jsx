@@ -21,6 +21,7 @@ class WorkoutApp extends React.Component{
          type: 'Run',
          date: new Date(Date.now()).toISOString()
         })]
+//      logs: []
     };
   }
   componentWillReceiveProps(newProps){
@@ -30,7 +31,7 @@ class WorkoutApp extends React.Component{
   }
   render(){
     return(
-      <LogList logs={this.state.logs} />
+      <LogList logs={this.state.logs} removeLog={this.removeLog.bind(this)}/>
     );
   }
   /**
@@ -39,10 +40,18 @@ class WorkoutApp extends React.Component{
    * @param {Object} log The new log to be added
    */
   addLog(log){
-    let newLogArray = this.state.push(log);
+    let newLogArray = this.state.logs;
+    newLogArray.push(log);
     this.setState({
       logs: newLogArray
     });
+  }
+  removeLog(logUUID){
+    let updatedLogList= this.state.logs.filter(node=>!(node.uuid===logUUID));
+    this.setState({
+      logs: updatedLogList
+    });
+    console.log(updatedLogList);
   }
 };
 export default WorkoutApp;

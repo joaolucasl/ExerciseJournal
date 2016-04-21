@@ -1,21 +1,31 @@
 import React from 'react';
 
-const LogItem = (props) => {
+class LogItem extends React.Component{
+ constructor(props){
+   super(props);
+ }
+ render() {
   return (
     <li className="log-item">
       <div className="log-item-left">
-       <img src="http://placehold.it/64x64" />
+       <img src={"img/icon-"+this.props.type.toLowerCase()+".png"} />
       </div>
       <div className="log-item-content">
         <h4 className="log-item-header">
-          {props.type}
+          {this.props.type}
         </h4>
-        {props.time} hours
+        {this.props.time} hours
       </div>
       <div className="log-item-right">
-        <a href="#">Remove</a>
+        <button onClick={this.handleRemoveButton.bind(this)}>
+          Remove
+        </button>
       </div>
     </li>
   )
+ }
+ handleRemoveButton(){
+    this.props.removeLog(this.props.uuid);
+ }
 }
 export default LogItem;
