@@ -1,1 +1,42 @@
-// SCSS here
+@import "colours";
+@import "helpers";
+body{
+  margin: 0px;
+  background: $app-base-colour;
+}
+#WorkoutApp{
+  width: 100%;
+  max-width: 769px;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  #log-list{
+    padding: 10px;
+    margin: 0 auto;
+    list-style-type: none;
+    .log-item{
+      padding: 10px;
+      background-color: $list-base-colour;
+      border: 1px solid $list-secondary-colour;
+      .log-item-left{
+        @extend %side-by-side-div;
+        img {
+          width: 64px;
+          height: 64px;
+          padding: 10px;
+        }
+      }
+      .log-item-content{
+        @extend %side-by-side-div;
+        width: 100%; // Forces the content div to occupy all the space not occupied by other divs.
+        .log-item-header{
+          margin-top: 0px;
+          margin-bottom: 5px;
+        }
+      }
+      .log-item-right{
+        @extend %side-by-side-div;
+      }
+    }
+  }
+}
