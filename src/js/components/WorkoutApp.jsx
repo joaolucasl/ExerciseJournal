@@ -1,5 +1,6 @@
 import React from 'react';
 import LogList from './LogList.jsx';
+import Log from '../classes/Log.js';
 
 class WorkoutApp extends React.Component{
   /**
@@ -10,16 +11,16 @@ class WorkoutApp extends React.Component{
     super();
     this.state = {
        logs: [
-        {
+        new Log({
          time: 1,
-         type: "Run",
+         type: 'Run',
          date: new Date(Date.now()).toISOString()
-        },
-        {
+        }),
+        new Log({
          time: 2,
-         type: "Run",
+         type: 'Run',
          date: new Date(Date.now()).toISOString()
-        }]
+        })]
     };
   }
   componentWillReceiveProps(newProps){
