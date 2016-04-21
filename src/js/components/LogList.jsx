@@ -3,19 +3,21 @@ import LogItem from './LogItem.jsx';
 
 const LogList = ({logs}) => {
   return (
-    <div id="log-list">
+    <ul id="log-list">
         {
           logs.map( log => {
             return (
               <LogItem
                 type={log.type}
                 time={log.time}
+                uuid={log.uuid}
                 key={log.uuid}
                 />
             )
           })
         }
-    </div>
+
+    </ul>
   )
 }
 export default LogList;
