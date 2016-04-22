@@ -1,5 +1,6 @@
 @import "colours";
 @import "helpers";
+
 body{
   margin: 0px;
   background: $app-base-colour;
@@ -10,15 +11,18 @@ body{
   margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+}
+  //  Log List Component styles
   #log-list{
-    padding: 10px;
+    padding: 15px 30px;
     margin: 0 auto;
     list-style-type: none;
+    background-color: $list-base-colour;
     .log-item{
       padding: 10px;
-      background-color: $list-base-colour;
-      border: 1px solid $list-secondary-colour;
-      .log-item-left{
+      border-bottom: 1px solid $list-secondary-colour;
+      transition: all 0.3s;
+      >.log-item-left{
         @extend %side-by-side-div;
         img {
           width: 64px;
@@ -26,7 +30,7 @@ body{
           padding: 10px;
         }
       }
-      .log-item-content{
+      >.log-item-content{
         @extend %side-by-side-div;
         width: 100%; // Forces the content div to occupy all the space not occupied by other divs.
         .log-item-header{
@@ -34,9 +38,61 @@ body{
           margin-bottom: 5px;
         }
       }
-      .log-item-right{
+      >.log-item-right{
         @extend %side-by-side-div;
       }
     }
   }
-}
+  //  Form styles
+  input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $list-secondary-colour;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    margin: 0px 15px;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
+    &:focus{
+      border-bottom: 1px solid $app-secondary-colour;
+      box-shadow: 0 1px 0 0 $app-secondary-colour;
+    }
+  }
+  button{
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    outline: 0;
+    padding: 0.5em 2em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    transition: all 0.3s;
+    color: $app-text-colour;
+    background: $app-secondary-colour;
+
+    &:hover,&:active{
+      background: darken($app-secondary-colour,10%); 
+    }
+  }
+  .top-area{
+    padding: 15px 30px;
+    background-color: $list-secondary-colour;
+    margin: 0 auto;
+    border-bottom: 1px solid $list-secondary-colour;
+    #new-log-form{
+      @extend %side-by-side-div;
+    }
+    #logged-time{
+      @extend %side-by-side-div;
+      font-size: 1.2em;
+      width: 100%;
+      font-weight: light;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }

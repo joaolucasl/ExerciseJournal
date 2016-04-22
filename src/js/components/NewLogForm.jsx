@@ -26,16 +26,14 @@ class NewLogForm extends React.Component {
   }
   render() {
     return (
-      <div className="new-form-">
-        <button onClick={this.openModal}>+</button> 
+      <div id="new-log-form">
+        <button onClick={this.openModal}>Add New</button> 
         <Modal isOpen={this.state.modalIsOpen} onRequestClose={this.closeModal}>
-          <div id="new-log-form">
             <form onSubmit={this.handleFormSubmission}>
               <input type="text" id="time" placeholder="Time spent" />
               <input type="text" id="time" placeholder="Activity Type" />
               <button type="submit">Submit</button>
             </form>
-          </div>
         </Modal>
       </div>
     );
