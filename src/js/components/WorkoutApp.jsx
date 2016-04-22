@@ -1,5 +1,6 @@
 import React from 'react';
 import LogList from './LogList.jsx';
+import NewLogForm from './NewLogForm.jsx';
 import Log from '../classes/Log.js';
 
 class WorkoutApp extends React.Component{
@@ -31,7 +32,10 @@ class WorkoutApp extends React.Component{
   }
   render(){
     return(
-      <LogList logs={this.state.logs} removeLog={this.removeLog.bind(this)}/>
+      <div class="AppHolder">
+        <NewLogForm />
+        <LogList logs={this.state.logs} removeLog={this.removeLog.bind(this)}/>
+      </div>
     );
   }
   /**
