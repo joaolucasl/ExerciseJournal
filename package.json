@@ -39,6 +39,7 @@
   "dependencies": {
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
+    "react-modal": "^1.2.0",
     "uuid-v4": "^0.1.0"
   }
 }

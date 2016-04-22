@@ -1,6 +1,7 @@
 import React from 'react';
 import LogList from './LogList.jsx';
 import NewLogForm from './NewLogForm.jsx';
+import LogTimeCounter from './LogTimeCounter.jsx';
 import Log from '../classes/Log.js';
 
 class WorkoutApp extends React.Component {
@@ -52,8 +53,11 @@ class WorkoutApp extends React.Component {
   }
   render() {
     return (
-      <div className="AppHolder">
-        <NewLogForm addLog={this.addLog} />
+      <div className="app-holder">
+        <div className="top-area">
+          <LogTimeCounter time={this.state.logs.length} />
+          <NewLogForm addLog={this.addLog} />
+        </div>
         <LogList logs={this.state.logs} removeLog={this.removeLog} />
       </div>
     );
