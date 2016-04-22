@@ -1,7 +1,7 @@
 import uuid from 'uuid-v4';
 
 class Log {
-  constructor(data){
+  constructor(data) {
     this.uuid = data.uuid || uuid();
     this.time = data.time;
     this.type = data.type;
