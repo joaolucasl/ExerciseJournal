@@ -37,7 +37,9 @@
     "rollup-plugin-replace": "^1.1.0"
   },
   "dependencies": {
+    "moment": "^2.13.0",
     "react": "^15.0.1",
+    "react-datepicker": "^0.25.0",
     "react-dom": "^15.0.1",
     "react-modal": "^1.2.0",
     "uuid-v4": "^0.1.0"

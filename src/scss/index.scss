@@ -1,5 +1,6 @@
 @import "colours";
 @import "helpers";
+@import "../../node_modules/react-datepicker/dist/react-datepicker.css";
 
 body{
   margin: 0px;
@@ -44,7 +45,10 @@ body{
     }
   }
   //  Form styles
-  input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea{
+  input[type=text], input[type=password], input[type=email], 
+  input[type=url], input[type=time], input[type=date], 
+  input[type=datetime], input[type=datetime-local], input[type=tel],
+   input[type=number], input[type=search], textarea, select{
     background-color: transparent;
     border: none;
     border-bottom: 1px solid $list-secondary-colour;
@@ -62,6 +66,7 @@ body{
       border-bottom: 1px solid $app-secondary-colour;
       box-shadow: 0 1px 0 0 $app-secondary-colour;
     }
+
   }
   button{
     border: none;
@@ -84,7 +89,7 @@ body{
     background-color: $list-secondary-colour;
     margin: 0 auto;
     border-bottom: 1px solid $list-secondary-colour;
-    #new-log-form{
+    #new-log-area{
       @extend %side-by-side-div;
     }
     #logged-time{
@@ -94,5 +99,12 @@ body{
       font-weight: light;
       text-align: center;
       text-transform: uppercase;
+    } 
+  }
+  #new-log-form{
+    padding: 15px 30px 15px 0px;
+    .action-buttons{
+      padding: 15px;
+      text-align: center; 
     }
   }
