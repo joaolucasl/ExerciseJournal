@@ -101,10 +101,41 @@ body{
       text-transform: uppercase;
     } 
   }
-  #new-log-form{
-    padding: 15px 30px 15px 0px;
-    .action-buttons{
-      padding: 15px;
-      text-align: center; 
+  .new-log-modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: #fafafa;
+    padding: 0;
+    max-height: 70%;
+    width: 55%;
+    margin: auto;
+    overflow-y: auto;
+    border-radius: 2px;
+    box-shadow: 0 16px 28px 0 rgba(0,0,0,0.22),0 25px 55px 0 rgba(0,0,0,0.21);
+    @media (max-width: 767px){
+      top: 10px;
+      left: 0px;
+      bottom: 10px;
+      padding: 25px;
     }
+    @media (min-width: 768px){
+      width: 600px;
+      margin: 30px auto;
+    }
+    #new-log-form{
+      padding: 15px 30px 15px 0px;
+      .action-buttons{
+        padding: 15px;
+        text-align: center; 
+      }
+    }
+  }
+  .new-log-modal-overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
   }
