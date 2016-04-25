@@ -1,19 +1,17 @@
 import React from 'react';
-import Log from '../classes/Log.js';
 import LogItem from './LogItem.jsx';
 
 class LogList extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       logs: this.props.logs || []
     };
     this.removeLog = this.removeLog.bind(this);
   }
-  
-  componentWillReceiveProps(newProps){
+  componentWillReceiveProps(newProps) {
     this.setState({
-      logs: newProps.logs
+      logs: newProps.logs,
     });
   }
   removeLog(uuid){

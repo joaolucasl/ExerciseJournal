@@ -5,8 +5,8 @@ function LogTimeCounter({ time }) {
   let subtitle;
   if (time > 0) {
     const hourString = (time > 1) ? 'hours' : 'hour';
-    timeString = `${time} ${hourString} of exercise logged! Awesome!`;
-    subtitle = 'Good job!';
+    timeString = `${time} ${hourString} of exercise logged so far`;
+    subtitle = 'Keep up the great work!';
   } else {
     timeString = 'You haven\'t logged any activities yet... :( ';
     subtitle = 'Try adding a new one!';
@@ -18,8 +18,8 @@ function LogTimeCounter({ time }) {
       <small>{subtitle}</small>
     </div>);
 }
-LogTimeCounter.propType = {
-  time: React.PropTypes.string.isRequired,
+LogTimeCounter.propTypes = {
+  time: React.PropTypes.number.isRequired,
 };
 
 export default LogTimeCounter;

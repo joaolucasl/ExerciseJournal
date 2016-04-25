@@ -18,12 +18,10 @@ class WorkoutApp extends React.Component {
         new Log({
           time: 1,
           type: 'Run',
-          date: new Date(Date.now()).toISOString(),
         }),
         new Log({
           time: 2,
           type: 'Run',
-          date: new Date(Date.now()).toISOString(),
         })],
     };
   }
