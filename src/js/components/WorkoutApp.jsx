@@ -13,7 +13,6 @@ class WorkoutApp extends React.Component {
     super();
     this.removeLog = this.removeLog.bind(this);
     this.addLog = this.addLog.bind(this);
-    console.log("Renderizou");
     this.state = {
       logs: [],
     };
@@ -43,10 +42,11 @@ class WorkoutApp extends React.Component {
     });
   }
   render() {
+    const timeCount = (this.state.logs.length > 0) ? this.state.logs.reduce((prev, curr) => prev + curr.time, 0) : 0;
     return (
       <div className="app-holder">
         <div className="top-area">
-          <LogTimeCounter time={this.state.logs.length} />
+          <LogTimeCounter time={timeCount} />
           <NewLogForm addLog={this.addLog} />
         </div>
         <LogList logs={this.state.logs} removeLog={this.removeLog} />

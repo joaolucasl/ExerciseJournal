@@ -31,6 +31,7 @@ class NewLogForm extends React.Component {
         date,
       });
       this.addLog(tempLog);
+      this.closeModal();
     } catch (ex) {
       //  If it catches an exception, we add the error message state
       this.addErrorMsg(ex.message);
@@ -108,13 +109,16 @@ class NewLogForm extends React.Component {
             <input type="text" ref="time" id="time" placeholder="Time spent" required />
             <select ref="type" id="type" required>
               <option value="run">Running</option>
-              <option value="swim">Swim</option>
+              <option value="swim">Swimming</option>
               <option value="bike">Cycling</option>
             </select>
             <DatePicker
               maxDate={moment()}
               selected={this.state.selectedDate}
               onChange={(date) => this.updateSelectedDate(date)}
+              showYearDropdown
+              dateFormatCalendar="MMMM"
+              dateFormat="DD/MM/YY"
               placeholderText="Date"
             />
             <div className="action-buttons">
