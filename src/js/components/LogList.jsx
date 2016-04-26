@@ -29,6 +29,7 @@ class LogList extends React.Component {
                 <LogItem
                   type={log.type}
                   time={log.time}
+                  date={log.date}
                   uuid={log.uuid}
                   key={log.uuid}
                   removeLog={this.removeLog}

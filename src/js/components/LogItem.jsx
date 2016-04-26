@@ -33,7 +33,8 @@ class LogItem extends React.Component {
           <h4 className="log-item-header">
             {this.props.type}
           </h4>
-          {this.props.time} hours
+          {this.props.time} hours <br />
+          {this.props.date.format("DD/MM/YY")}
         </div>
         <div className="log-item-right">
           <button onClick={this.handleRemoveButton }>
@@ -48,6 +49,7 @@ LogItem.propTypes = {
   removeLog: React.PropTypes.func.isRequired,
   type: React.PropTypes.string.isRequired,
   time: React.PropTypes.number.isRequired,
+  date: React.PropTypes.object.isRequired,
   uuid: React.PropTypes.string.isRequired,
 };
 export default LogItem;
