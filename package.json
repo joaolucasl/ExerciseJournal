@@ -5,10 +5,12 @@
   "description": "A simple workout log web applicaiton",
   "license": "MIT",
   "main": "app.js",
-  "config": {
-    "env": "development"
+  "scripts": {
+    "build" : "./node_modules/gulp/bin/gulp.js --production",
+    "build-dev" : "./node_modules/gulp/bin/gulp.js",
+    "watch" : "./node_modules/gulp/bin/gulp.js watch",
+    "watch-prod" : "./node_modules/gulp/bin/gulp.js watch --production"
   },
-  "scripts": {},
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.7.6",
