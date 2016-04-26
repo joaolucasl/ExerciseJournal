@@ -37,6 +37,7 @@ body{
         .log-item-header{
           margin-top: 0px;
           margin-bottom: 5px;
+          text-transform: uppercase;
         }
       }
       >.log-item-right{
@@ -141,9 +142,9 @@ body{
         margin: 10px;
         border-radius: 5px;
         background: pink;
-    }
+      }
    }
-  }
+  
   .new-log-modal-overlay{
     position: fixed;
     top: 0px;

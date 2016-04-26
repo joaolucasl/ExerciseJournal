@@ -17,6 +17,11 @@ class NewLogForm extends React.Component {
     this.handleFormSubmission = this.handleFormSubmission.bind(this);
     this.addLog = this.props.addLog;
   }
+  /**
+   * This function handles the NewLogForm's form submission,
+   * preventing the default submission and performing itself
+   * the needed operations to add a new Log to the application.
+   */
   handleFormSubmission(event) {
     event.preventDefault();
     this.clearErrorMsg();
@@ -37,6 +42,9 @@ class NewLogForm extends React.Component {
       this.addErrorMsg(ex.message);
     }
   }
+  /**
+   * This function updates the NewLogForm's Modal state to be open.
+   */
   openModal() {
     this.setState({
       modalIsOpen: true,
@@ -44,6 +52,9 @@ class NewLogForm extends React.Component {
       validationError: this.state.validationError,
     });
   }
+  /**
+   * This function updates the NewLogForm's Modal state to be closed.
+   */
   closeModal() {
     this.setState({
       modalIsOpen: false,
@@ -52,6 +63,9 @@ class NewLogForm extends React.Component {
     });
     return false;
   }
+  /**
+   * Adds a new error message to the state.
+   */
   addErrorMsg(msg) {
     const newErrArray = this.state.validationError;
     newErrArray.push(msg);
@@ -61,6 +75,9 @@ class NewLogForm extends React.Component {
       validationError: newErrArray,
     });
   }
+  /**
+   * Clears the error messages currently in the state.
+   */
   clearErrorMsg() {
     this.setState({
       modalIsOpen: this.state.modalIsOpen,
@@ -68,6 +85,9 @@ class NewLogForm extends React.Component {
       validationError: [],
     });
   }
+  /**
+   * Updates the currently selected date via DatePicker
+   */
   updateSelectedDate(date) {
     this.setState({
       modalIsOpen: this.state.modalIsOpen,
@@ -96,10 +116,10 @@ class NewLogForm extends React.Component {
     // Here we create the UI elements
     return (
       <div id="new-log-area">
-        <button onClick={() => this.openModal()}>Add New</button>
+        <button onClick={() => this.openModal() }>Add New</button>
         <Modal
           isOpen={this.state.modalIsOpen}
-          onRequestClose={() => this.closeModal()}
+          onRequestClose={() => this.closeModal() }
           className="new-log-modal"
           overlayClassName="new-log-modal-overlay"
         >
@@ -113,9 +133,9 @@ class NewLogForm extends React.Component {
               <option value="bike">Cycling</option>
             </select>
             <DatePicker
-              maxDate={moment()}
+              maxDate={moment() }
               selected={this.state.selectedDate}
-              onChange={(date) => this.updateSelectedDate(date)}
+              onChange={(date) => this.updateSelectedDate(date) }
               showYearDropdown
               dateFormatCalendar="MMMM"
               dateFormat="DD/MM/YY"
@@ -124,7 +144,7 @@ class NewLogForm extends React.Component {
             <div className="action-buttons">
               <button type="button"
                 className="secondary"
-                onClick={() => this.closeModal()}
+                onClick={() => this.closeModal() }
               >
                 Close
               </button>
@@ -136,5 +156,8 @@ class NewLogForm extends React.Component {
     );
   }
 }
+NewLogForm.propTypes = {
+  addLog: React.PropTypes.func.isRequired,
+};
 
 export default NewLogForm;

@@ -2,7 +2,6 @@ import React from 'react';
 import LogList from './LogList.jsx';
 import NewLogForm from './NewLogForm.jsx';
 import LogTimeCounter from './LogTimeCounter.jsx';
-import Log from '../classes/Log.js';
 
 class WorkoutApp extends React.Component {
   /**
@@ -42,7 +41,12 @@ class WorkoutApp extends React.Component {
     });
   }
   render() {
-    const timeCount = (this.state.logs.length > 0) ? this.state.logs.reduce((prev, curr) => prev + curr.time, 0) : 0;
+    let timeCount;
+    if (this.state.logs.length > 0) {
+      timeCount = this.state.logs.reduce((prev, curr) => prev + curr.time, 0);
+    } else {
+      timeCount = 0;
+    }
     return (
       <div className="app-holder">
         <div className="top-area">
