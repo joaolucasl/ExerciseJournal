@@ -114,11 +114,16 @@ class NewLogForm extends React.Component {
             <DatePicker
               maxDate={moment()}
               selected={this.state.selectedDate}
-              onChange={this.updateSelectedDate}
+              onChange={(date) => this.updateSelectedDate(date)}
               placeholderText="Date"
             />
             <div className="action-buttons">
-              <button type="button" className="secondary" onClick={() => this.closeModal()}>Close</button>
+              <button type="button"
+                className="secondary"
+                onClick={() => this.closeModal()}
+              >
+                Close
+              </button>
               <button type="submit">Submit</button>
             </div>
           </form>
