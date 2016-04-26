@@ -13,16 +13,9 @@ class WorkoutApp extends React.Component {
     super();
     this.removeLog = this.removeLog.bind(this);
     this.addLog = this.addLog.bind(this);
+    console.log("Renderizou");
     this.state = {
-      logs: [
-        new Log({
-          time: 1,
-          type: 'Run',
-        }),
-        new Log({
-          time: 2,
-          type: 'Run',
-        })],
+      logs: [],
     };
   }
 
