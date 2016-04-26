@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict'
 /**
  *  NOTE: Using CommonJS' Require instead of ES6's import
