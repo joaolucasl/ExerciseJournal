@@ -101,3 +101,5 @@ gulp.task('watch', function () {
   gulp.watch(PATHS.source.views, ['html']);
   gulp.watch(PATHS.source.img, ['img']);
 });
+
+gulp.task('default',['js','css','html','img']);
