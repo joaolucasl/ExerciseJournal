@@ -1,3 +1,5 @@
+# Workout Log
+
 #### Architecture 
 The application was built as a single-page application using cutting-edge tools, such as [React.js](http://facebook.github.io/react). 
 It was opted not to use any Flux implementations (like Redux) for state management, since that would grow the applications size and complexity and my knowledge of it is limited.
