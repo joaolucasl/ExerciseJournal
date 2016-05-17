@@ -1,10 +1,11 @@
-# Workout Log
+# ExerciseJournal
 
 #### Architecture 
-The application was built as a single-page application using cutting-edge tools, such as [React.js](http://facebook.github.io/react). 
-It was opted not to use any Flux implementations (like Redux) for state management, since that would grow the applications size and complexity and my knowledge of it is limited.
+The application was built as a single-page application using cutting-edge tools, such as [React.js](http://facebook.github.io/react) as a Frontend dev job test I applied for.
 
-Despite my lack of experience with ES6 and React yet, I chose to work with it on this project since it's become the *de facto* standard for React. The ES6 class and imports are great to work with React's modular and component based structure.
+I opted not to use any Flux implementations (like Redux) for state management, since that would grow the applications size and complexity and my knowledge of is limited at this point.
+
+Despite my lack of experience with ES6 applied to React yet (April 2016), I chose to work with it on this project since it has become the *de facto* standard for React. The ES6 class and imports are great to work with React's modular and component based structure.
 
 ## Getting started
 Make sure you have NodeJS installed on your machine. *The system was built with Node v5.5.0 - incompatiblities with older versions may occur, despite unlikely* 
@@ -45,7 +46,8 @@ I decided to use this test as an opportunity to give [Rollup](https://github.com
   
   Also, the project took longer than expected to be developed since I was developing that on my 'free time' during work and I'm still not fully 'fluent' in React + ES6.
   
-  ### Future improvements
+### Future improvements
+  
   If I were to start again, I would probably use WebPack and/or Gulp for the build process. Rollup is great but isn't quite fit for production just yet - it lacks a few things WebPack offers and its build size isn't usually much lesser than WebPack's.
   
   Additionally, I would probably rewrite the CSS to make it more modular and reusable, which wasn't one of my goals while writing it but is definitely important for larger-scaled projects.
