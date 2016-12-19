@@ -1,10 +1,9 @@
-const autoprefixer = require('autoprefixer')
-const cssNext = require('postcss-cssnext')
+const autoprefixer = require('autoprefixer');
+const cssNext = require('postcss-cssnext');
 const lost = require('lost');
-const path = require('path')
-const OpenBrowserPlugin = require('open-browser-webpack-plugin')
-const prefixer = require('autoprefixer')
-const pcImport = require('postcss-import')
+const path = require('path');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const pcImport = require('postcss-import');
 
 module.exports = {
   entry: './src/app.js',
@@ -19,11 +18,15 @@ module.exports = {
       },
       {
         test: /\.(css|styl|scss)$/,
-        loader: 'style!css?modules&importLoaders=1!stylus!postcss',
+        loader: 'style!css!postcss!stylus',
       },
       {
         test: /\.svg$/,
         loader: 'file',
+      },
+      {
+        test: /\.html$/,
+        loader: 'file?name=[name].[ext]',
       },
     ],
     preLoaders: [
@@ -38,9 +41,9 @@ module.exports = {
     pcImport,
     cssNext,
     lost,
-    autoprefixer({ browsers: ['> 15%'] })
+    autoprefixer({ browsers: ['> 15%'] }),
   ],
   plugins: [
     new OpenBrowserPlugin({ url: 'http://localhost:8080/' }),
   ],
-}
+};
