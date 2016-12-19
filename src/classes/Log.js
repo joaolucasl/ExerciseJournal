@@ -1,5 +1,6 @@
 import uuid from 'uuid-v4';
 import moment from 'moment';
+import { concat, evolve, reject, __ } from 'ramda';
 
 class Log {
   constructor(data) {
@@ -9,6 +10,7 @@ class Log {
     this.type = data.type;
     this.date = data.date || moment().toISOString();
   }
+
   validate(data) {
     const validTypes = ['run', 'swim', 'bike'];
     //  Validating the argument type first so it isn't nonsense.
@@ -31,6 +33,18 @@ class Log {
     if (validTypes.find(type => type === data.type.toLowerCase()) === undefined) {
       throw new Error('Invalid activity type.');
     }
+  }
+
+  static addLog(state, log) {
+    return evolve({
+      logs: concat(__, [log]),
+    }, state);
+  }
+
+  static removeLog(state, log) {
+    return evolve({
+      logs: reject(_log => _log.id === log.id),
+    }, state);
   }
 }
 
