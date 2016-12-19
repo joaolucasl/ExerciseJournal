@@ -1,6 +1,8 @@
 const removeLog = (uuid) => ({
   type: 'REMOVE_LOG',
-  uuid,
+  payload: {
+    uuid,
+  },
 });
 
 export default removeLog;

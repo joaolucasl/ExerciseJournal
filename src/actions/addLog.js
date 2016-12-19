@@ -1,6 +1,8 @@
 const addLog = (log) => ({
   type: 'ADD_LOG',
-  log,
+  payload: {
+    log,
+  },
 });
 
 export default addLog;

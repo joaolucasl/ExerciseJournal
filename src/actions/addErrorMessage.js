@@ -1,6 +1,8 @@
 const addErrorMessage = (msg) => ({
   type: 'ADD_ERROR_MESSAGE',
-  msg,
+  payload: {
+    msg,
+  },
 });
 
 export default addErrorMessage;
