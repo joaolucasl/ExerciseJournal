@@ -5,8 +5,8 @@
   "description": "A simple workout log web applicaiton",
   "license": "MIT",
   "scripts": {
-    "build": "webpack -p --progress --colors --optimize-minimize --optimize-dedupe && cp src/views/index.html build/index.html",
-    "start": "webpack-dev-server --progress --colors --inline --hot --host 0.0.0.0 --port 8080"
+    "build": "webpack -p --progress --colors --optimize-minimize --optimize-dedupe",
+    "watch": "webpack-dev-server --progress --colors --inline --hot --host 0.0.0.0 --port 8080"
   },
   "devDependencies": {
     "babel": "^6.5.2",
