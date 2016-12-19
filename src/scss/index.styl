@@ -1,10 +1,9 @@
-@import "colours";
-@import "helpers";
-@import "../../node_modules/react-datepicker/dist/react-datepicker.css";
+@import "colours.styl"
+@import "helpers.styl"
 
 body{
   margin: 0px;
-  background: $app-base-colour;
+  background: app-base-colour;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
@@ -18,13 +17,13 @@ body{
     padding: 15px 30px;
     margin: 0 auto;
     list-style-type: none;
-    background-color: $list-base-colour;
+    background-color: list-base-colour;
     .log-item{
       padding: 10px;
-      border-bottom: 1px solid $list-secondary-colour;
+      border-bottom: 1px solid list-secondary-colour;
       transition: all 0.3s;
       >.log-item-left{
-        @extend %side-by-side-div;
+        @extend .side-by-side-div;
         img {
           width: 64px;
           height: 64px;
@@ -32,7 +31,7 @@ body{
         }
       }
       >.log-item-content{
-        @extend %side-by-side-div;
+        @extend .side-by-side-div;
         width: 100%; // Forces the content div to occupy all the space not occupied by other divs.
         .log-item-header{
           margin-top: 0px;
@@ -41,7 +40,7 @@ body{
         }
       }
       >.log-item-right{
-        @extend %side-by-side-div;
+        @extend .side-by-side-div;
       }
     }
   }
@@ -52,7 +51,7 @@ body{
    input[type=number], input[type=search], textarea, select{
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid $list-secondary-colour;
+    border-bottom: 1px solid list-secondary-colour;
     border-radius: 0;
     outline: none;
     height: 3rem;
@@ -63,8 +62,8 @@ body{
     box-sizing: content-box;
     transition: all 0.3s;
     &:focus{
-      border-bottom: 1px solid $app-secondary-colour;
-      box-shadow: 0 1px 0 0 $app-secondary-colour;
+      border-bottom: 1px solid app-secondary-colour;
+      box-shadow: 0 1px 0 0 app-secondary-colour;
     }
   }
   button{
@@ -76,26 +75,26 @@ body{
     text-transform: uppercase;
     vertical-align: middle;
     transition: all 0.3s;
-    color: $app-text-colour;
-    background: $app-secondary-colour;
+    color: app-text-colour;
+    background: app-secondary-colour;
     margin: 5px;
     &:hover,&:active{
-      background: darken($app-secondary-colour,10%); 
+      background: darken(app-secondary-colour, 10%); 
     }
     &.secondary{
-      background: $page-secondary-colour;    
+      background: page-secondary-colour;    
     }
   }
   .top-area{
     padding: 15px 30px;
-    background-color: $list-secondary-colour;
+    background-color: list-secondary-colour;
     margin: 0 auto;
-    border-bottom: 1px solid $list-secondary-colour;
+    border-bottom: 1px solid list-secondary-colour;
     #new-log-area{
-      @extend %side-by-side-div;
+      @extend .side-by-side-div;
     }
     #logged-time{
-      @extend %side-by-side-div;
+      @extend .side-by-side-div;
       font-size: 1.2em;
       width: 100%;
       font-weight: light;
@@ -135,7 +134,7 @@ body{
       h3{
         padding: 15px;
         margin: 0px;
-        border-bottom: 1px solid $list-secondary-colour;
+        border-bottom: 1px solid list-secondary-colour;
       }
       .error-area{
         padding: 10px;
