@@ -1,5 +1,8 @@
 import React from 'react';
-import LogItem from './LogItem.jsx';
+import LogItem from '../components/LogItem.jsx';
+import { connect } from 'react-redux';
+import Log from '../classes/Log';
+
 /**
  * This class is the holder for the list of logs.
  * It renders LogItem instances, based off the
@@ -7,25 +10,10 @@ import LogItem from './LogItem.jsx';
  * It forwards a bound `removeLog` function from
  * the parent to each LogItem child.
  */
-class LogList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      logs: this.props.logs || [],
-    };
-    this.removeLog = this.removeLog.bind(this);
-  }
-  componentWillReceiveProps(newProps) {
-    this.setState({
-      logs: newProps.logs,
-    });
-  }
-  removeLog(uuid) {
-    this.props.removeLog(uuid);
-  }
+class LogList extends React.PureComponent {
   render() {
     //  We build the LogItems list based on state
-    const items = this.state.logs.map(log =>
+    const items = this.props.logs.map(log =>
                 <LogItem
                   type={log.type}
                   time={log.time}
@@ -43,8 +31,15 @@ class LogList extends React.Component {
     );
   }
 }
+
 LogList.propTypes = {
-  logs: React.PropTypes.array.isRequired,
-  removeLog: React.PropTypes.func.isRequired,
+  logs: React.PropTypes.arrayOf(Log),
 };
-export default LogList;
+
+const mapStateToProps = (state) => {
+  return {
+    logs: state.logs,
+  };
+};
+
+export default connect(mapStateToProps)(LogList);
