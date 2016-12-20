@@ -1,7 +1,10 @@
 import Log from '../classes/Log.js';
 
 const initialState = {
-  logs: [],
+  logs: [
+    new Log({ time: 2, type: 'run', date: new Date() }),
+    new Log({ time: 3, type: 'swim', date: new Date() }),
+  ],
 };
 
 const logReducer = (state = initialState, action) => {
