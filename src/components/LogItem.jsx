@@ -1,4 +1,6 @@
 import React from 'react';
+import moment from 'moment';
+
 /**
  * This class is the holder for single Lot Item's data;
  * It is very simple, and basically only shows off the
@@ -34,7 +36,6 @@ class LogItem extends React.Component {
             {this.props.type}
           </h4>
           {this.props.time} hours <br />
-          {this.props.date.format("DD/MM/YY")}
         </div>
         <div className="log-item-right">
           <button onClick={this.handleRemoveButton }>
@@ -45,11 +46,5 @@ class LogItem extends React.Component {
     );
   }
 }
-LogItem.propTypes = {
-  removeLog: React.PropTypes.func.isRequired,
-  type: React.PropTypes.string.isRequired,
-  time: React.PropTypes.number.isRequired,
-  date: React.PropTypes.object.isRequired,
-  uuid: React.PropTypes.string.isRequired,
-};
+
 export default LogItem;

@@ -1,7 +1,6 @@
 import React from 'react';
 import LogItem from '../components/LogItem.jsx';
 import { connect } from 'react-redux';
-import Log from '../classes/Log';
 
 /**
  * This class is the holder for the list of logs.
@@ -33,7 +32,7 @@ class LogList extends React.PureComponent {
 }
 
 LogList.propTypes = {
-  logs: React.PropTypes.arrayOf(Log),
+  logs: React.PropTypes.array,
 };
 
 const mapStateToProps = (state) => {
