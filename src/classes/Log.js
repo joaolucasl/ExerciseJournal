@@ -41,9 +41,9 @@ class Log {
     }, state);
   }
 
-  static removeLog(state, log) {
+  static removeLog(state, _uuid) {
     return evolve({
-      logs: reject(_log => _log.id === log.id),
+      logs: reject(_log => _log.uuid === _uuid),
     }, state);
   }
 }

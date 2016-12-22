@@ -10,10 +10,10 @@ const initialState = {
 const logReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'ADD_LOG': {
-      return Log.addLog(state, action.payload.log);
+      return Log.addLog(state, action.payload.uuid);
     }
     case 'REMOVE_LOG': {
-      return Log.remove(state, action.payload.log);
+      return Log.removeLog(state, action.payload.uuid);
     }
     default:
       return state;

@@ -1,6 +1,5 @@
 import React from 'react';
 import LogItem from '../components/LogItem.jsx';
-import { connect } from 'react-redux';
 
 /**
  * This class is the holder for the list of logs.
@@ -19,7 +18,7 @@ class LogList extends React.PureComponent {
                   date={log.date}
                   uuid={log.uuid}
                   key={log.uuid}
-                  removeLog={this.removeLog}
+                  removeLog={() => this.props.onRemoveClick(log.uuid)}
                 />
     );
     //  And return it wrapped inside a UL tag
@@ -33,12 +32,7 @@ class LogList extends React.PureComponent {
 
 LogList.propTypes = {
   logs: React.PropTypes.array,
+  onRemoveClick: React.PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state) => {
-  return {
-    logs: state.logs,
-  };
-};
-
-export default connect(mapStateToProps)(LogList);
+export default LogList;
