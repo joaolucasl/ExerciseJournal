@@ -8,23 +8,6 @@ import moment from 'moment';
  * user can delete this specific log when wanted.
  */
 class LogItem extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.handleRemoveButton = this.handleRemoveButton.bind(this);
-  }
-  /**
-   * This function is the callback function for when the remove
-   * button is pressed in the LogItem. It uses the removeLog prop
-   * to remove itself from the parent's state.
-   */
-  handleRemoveButton() {
-    this.props.removeLog(this.props.uuid);
-  }
-  /**
-   * Renders the Component DOM structure, with the Log's data
-   * and a corresponding image based on its type, as well as a
-   * button for deletion of the current log.
-   */
   render() {
     return (
       <li className="log-item">
@@ -38,7 +21,7 @@ class LogItem extends React.PureComponent {
           {this.props.time} hours <br />
         </div>
         <div className="log-item-right">
-          <button onClick={this.handleRemoveButton }>
+          <button onClick={() => this.props.removeLog(this.props.uuid)}>
             Remove
           </button>
         </div>
