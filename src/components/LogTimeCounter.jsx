@@ -18,6 +18,7 @@ function LogTimeCounter({ time }) {
       <small>{subtitle}</small>
     </div>);
 }
+
 LogTimeCounter.propTypes = {
   time: React.PropTypes.number.isRequired,
 };

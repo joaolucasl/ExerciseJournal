@@ -7,7 +7,7 @@ import moment from 'moment';
  * Log's information, and offers a remove button so the
  * user can delete this specific log when wanted.
  */
-class LogItem extends React.Component {
+class LogItem extends React.PureComponent {
   constructor(props) {
     super(props);
     this.handleRemoveButton = this.handleRemoveButton.bind(this);
